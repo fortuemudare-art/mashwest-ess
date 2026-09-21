@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mashonaland West ESS</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f1e8;color:#24352b}
+header{background:#234d35;color:white;padding:20px}
+header h1{margin:0;font-size:24px}
+header p{margin:6px 0 0;opacity:.9}
+nav{display:flex;gap:8px;padding:12px;background:white;overflow-x:auto;border-bottom:1px solid #ddd}
+nav button{border:0;padding:12px 16px;border-radius:10px;background:#e7eee8;color:#234d35;font-weight:bold;white-space:nowrap}
+nav button.active{background:#234d35;color:white}
+main{max-width:1100px;margin:auto;padding:16px}
+.card{background:white;border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 2px 8px #00000012}
+.card h2{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.stat{padding:16px;border-radius:14px;background:#edf4ee}
+.stat strong{display:block;font-size:28px;color:#234d35}
+label{display:block;font-weight:bold;margin-bottom:6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:9px;font-size:15px}
+textarea{min-height:90px}
+button.primary{background:#234d35;color:white;border:0;padding:13px 18px;border-radius:10px;font-weight:bold}
+.status{padding:10px;border-radius:9px;font-weight:bold}
+.green{background:#dff2e3;color:#17632b}
+.orange{background:#fff0c9;color:#805b00}
+.red{background:#f9d9d9;color:#8b1e1e}
+.hidden{display:none}
+.small{font-size:13px;color:#667}
+.progress{height:10px;background:#ddd;border-radius:10px;overflow:hidden}
+.progress div{height:100%;width:35%;background:#4d8b62}
+@media(max-width:600px){
+header h1{font-size:20px}
+main{padding:10px}
+.card{padding:14px}
+nav button{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🌍 Mashonaland West ESS</h1>
+<p>Evidence, Learning & Management System</p>
+</header>
+
+<nav>
+<button class="active" onclick="show('home',this)">Home</button>
+<button onclick="show('school',this)">🏫 School Data</button>
+<button onclick="show('head',this)">👩🏾‍🏫 School Head</button>
+<button onclick="show('district',this)">📍 District</button>
+<button onclick="show('province',this)">📊 Provincial Mother</button>
+</nav>
+
+<main>
+
+<section id="home">
+<div class="card">
+<h2>Welcome</h2>
+<p>This system follows the ESS learning cycle:</p>
+<div class="grid">
+<div class="stat"><strong>1</strong>ASSESS</div>
+<div class="stat"><strong>2</strong>PLAN</div>
+<div class="stat"><strong>3</strong>TEACH</div>
+<div class="stat"><strong>4</strong>REMEDIATE</div>
+<div class="stat"><strong>5</strong>RE-ASSESS</div>
+<div class="stat"><strong>6</strong>ACT</div>
+</div>
+</div>
+
+<div class="card">
+<h2>📡 Sync Status</h2>
+<div class="status orange">🟠 SAVED — WAITING FOR NETWORK</div>
+<p class="small">Last successful sync: Not yet available</p>
+</div>
+
+<div class="card">
+<h2>How the system works</h2>
+<p><b>Learner evidence → Teacher action → School leadership → District verification → Provincial action → Re-assessment</b></p>
+<p>The Province receives evidence generated naturally by schools and districts and turns it into management intelligence.</p>
+</div>
+</section>
+
+<section id="school" class="hidden">
+<div class="card">
+<h2>🏫 School Data</h2>
+<p>Capture class-level learner evidence. No learner names are required.</p>
+
+<div class="grid">
+<div>
+<label>District</label>
+<select><option>Select district</option><option>Makonde</option><option>Hurungwe</option><option>Kariba</option><option>Zvimba</option><option>Chegutu</option><option>Sanyati</option><option>Mhondoro Ngezi</option></select>
+</div>
+<div>
+<label>School</label>
+<select><option>Select school</option></select>
+</div>
+<div>
+<label>Grade / Group</label>
+<select><option>Select grade</option><option>Grade 3</option><option>Grade 4</option><option>Grade 3 + Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 5 + Grade 6</option></select>
+</div>
+<div>
+<label>Class</label>
+<select><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option></select>
+</div>
+<div>
+<label>Assessment point</label>
+<select><option>BOT</option><option>Mid-Term</option><option>EOT</option></select>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>📖 Reading Diagnosis</h2>
+<div class="grid">
+<div><label>Non-Reader</label><input type="number" min="0" value="0"></div>
+<div><label>Pre-Reader</label><input type="number" min="0" value="0"></div>
+<div><label>Beginning Reader</label><input type="number" min="0" value="0"></div>
+<div><label>Developing Reader</label><input type="number" min="0" value="0"></div>
+<div><label>Fluent Reader</label><input type="number" min="0" value="0"></div>
+<div><label>Independent Reader</label><input type="number" min="0" value="0"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>🔢 Numeracy Diagnosis</h2>
+<div class="grid">
+<div><label>Non-Numerate</label><input type="number" min="0" value="0"></div>
+<div><label>Emerging Numeracy</label><input type="number" min="0" value="0"></div>
+<div><label>Beginning Numeracy</label><input type="number" min="0" value="0"></div>
+<div><label>Developing Numeracy</label><input type="number" min="0" value="0"></div>
+<div><label>Proficient Numeracy</label><input type="number" min="0" value="0"></div>
+<div><label>Independent Numeracy</label><input type="number" min="0" value="0"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>🛠 Remediation</h2>
+<div class="grid">
+<div><label>Remediation required?</label><select><option>Yes</option><option>No</option></select></div>
+<div><label>Learners requiring remediation</label><input type="number" min="0" value="0"></div>
+<div><label>Learners remedied</label><input type="number" min="0" value="0"></div>
+<div><label>Remediation completed?</label><select><option>Yes</option><option>Partly</option><option>No</option></select></div>
+</div>
+<label>Concept / skill remediated</label>
+<textarea placeholder="Enter the main concept or skill..."></textarea>
+</div>
+
+<button class="primary" onclick="saveRecord()">💾 Save Record</button>
+<div id="saveMsg"></div>
+</section>
+
+<section id="head" class="hidden">
+<div class="card">
+<h2>👩🏾‍🏫 School Head Interface</h2>
+<p>Supervise the link between learner evidence and teacher action.</p>
+<div class="grid">
+<div><label>Diagnosis completed?</label><select><option>Yes</option><option>Partly</option><option>No</option></select></div>
+<div><label>Scripts used?</label><select><option>Consistently</option><option>Partly</option><option>Not used</option><option>Not verified</option></select></div>
+<div><label>Lesson observed?</label><select><option>Yes</option><option>No</option></select></div>
+<div><label>Remediation taking place?</label><select><option>Regular</option><option>Occasional</option><option>Not happening</option><option>Not verified</option></select></div>
+<div><label>Leadership supervision?</label><select><option>Regular</option><option>Occasional</option><option>Not evident</option><option>Not verified</option></select></div>
+<div><label>Leadership coaching?</label><select><option>Regular</option><option>Occasional</option><option>Not evident</option><option>Not verified</option></select></div>
+<div><label>Staff development?</label><select><option>Conducted</option><option>Partly conducted</option><option>Not conducted</option><option>Not verified</option></select></div>
+</div>
+</div>
+
+<div class="card">
+<h2>🎯 Coaching focus</h2>
+<div class="grid">
+<label><input type="checkbox"> Lesson planning</label>
+<label><input type="checkbox"> Use of lesson script</label>
+<label><input type="checkbox"> Differentiation</label>
+<label><input type="checkbox"> Teaching non-readers</label>
+<label><input type="checkbox"> Numeracy instruction</label>
+<label><input type="checkbox"> Remediation strategies</label>
+<label><input type="checkbox"> Learner assessment</label>
+<label><input type="checkbox"> Inclusive / GESI practices</label>
+</div>
+</div>
+
+<div class="card">
+<label>Main gap observed</label>
+<textarea></textarea>
+<label>Action required</label>
+<textarea></textarea>
+<label>Evidence / reference</label>
+<textarea></textarea>
+</div>
+</section>
+
+<section id="district" class="hidden">
+<div class="card">
+<h2>📍 District Verification & Support</h2>
+<div class="grid">
+<div><label>School</label><select><option>Select school</option></select></div>
+<div><label>Visit type</label><select><option>Inspection</option><option>Support visit</option></select></div>
+<div><label>Scripts verified</label><select><option>Consistently</option><option>Partly</option><option>Not used</option><option>Not verified</option></select></div>
+<div><label>Remediation verified</label><select><option>Regular</option><option>Occasional</option><option>Not happening</option><option>Not verified</option></select></div>
+<div><label>Leadership supervision verified</label><select><option>Regular</option><option>Occasional</option><option>Not evident</option><option>Not verified</option></select></div>
+<div><label>Staff development</label><select><option>Conducted</option><option>Partly conducted</option><option>Not conducted</option><option>Not verified</option></select></div>
+</div>
+</div>
+
+<div class="card">
+<label>Main gap</label>
+<textarea></textarea>
+<label>Support provided</label>
+<textarea></textarea>
+<label>Action required</label>
+<textarea></textarea>
+<label>Follow-up status</label>
+<select><option>Completed</option><option>Ongoing</option><option>Not started</option><option>Overdue</option></select>
+</div>
+</section>
+
+<section id="province" class="hidden">
+<div class="card">
+<h2>📊 Provincial “Mother” Dashboard</h2>
+<p>The Province sees evidence from all districts without re-entering school data.</p>
+<div class="grid">
+<div class="stat"><strong>145</strong>ESS Schools</div>
+<div class="stat"><strong>7</strong>Districts</div>
+<div class="stat"><strong>0</strong>Synced Records</div>
+<div class="stat"><strong>0</strong>Integrity Flags</div>
+</div>
+</div>
+
+<div class="card">
+<h2>📡 Data Flow</h2>
+<div class="progress"><div></div></div>
+<p>School → District → Province</p>
+</div>
+
+<div class="card">
+<h2>🚦 Data Integrity</h2>
+<div class="status green">🟢 System ready — no records submitted yet</div>
+<p class="small">The system will flag impossible totals, duplicate submissions, missing classes and unusual repeated patterns for review.</p>
+</div>
+</section>
+
+</main>
+
+<script>
+function show(id,btn){
+document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));
+document.getElementById(id).classList.remove('hidden');
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+}
+function saveRecord(){
+const msg=document.getElementById('saveMsg');
+msg.innerHTML='<div class="status green" style="margin-top:15px">💾 RECORD SAVED ON THIS DEVICE — WAITING FOR SYNC</div>';
+}
+</script>
+
+</body>
+</html>
